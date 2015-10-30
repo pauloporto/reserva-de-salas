@@ -99,10 +99,10 @@ class UsuarioController
 			$row = $usuario->autenticar($email, $senha);
 			
 			// encontrou usuario
-			if(isset($row['id'] ))
+			if(isset($row[0]['id'] ))
 			{
 				session_start();
-				$_SESSION['user_id'] = $row['id'];
+				$_SESSION['user_id'] = $row[0]['id'];
 				header("Location: index.php"); // pagina inicial
 				exit();
 			}
