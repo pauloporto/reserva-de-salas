@@ -1,10 +1,62 @@
-﻿<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Documento sem título</title>
-</head>
+﻿<?
+include ("db_mysqli.php");
 
-<body>
-</body>
-</html>
+class sala
+{
+ 
+
+	function listar()
+	{
+		
+		$db = new Database();
+		
+		$sql = ' select * from sala order by nome;' ;
+		return $db->query($sql);
+	}
+	
+	
+	function abrir($id)
+	{
+		
+		$db = new Database();
+		
+		$sql = ' select * from sala where id = '. $id; ;
+		return $db->query($sql);
+	}
+	
+	function salvar($id,$nome, $email)
+	{
+	
+		$db = new Database();
+		
+		// inserir
+		if($id == 0)
+		{
+		$senha = md5($senha);
+		
+		$sql = 'insert into sala ( nome ) values ("'.$nome.'")';
+		return $db->query_insert($sql);
+		}
+		else
+		{ // atualizar
+			
+		
+			
+			$sql = ' update sala set nome = "'.$nome.'" where id = ' .$id;
+			return $db->query_update($sql);
+
+		}
+
+		
+	}
+	
+	function excluir($id)
+	{
+		$db = new Database();
+		$sql = 'delete from sala where id = '.$id; 
+		return $db->query_update($sql);
+	}
+	
+}
+
+?>

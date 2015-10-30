@@ -2,12 +2,11 @@
 
 <ul>
 
-    <li><a href="index.php">Home</a></li>
-    <li><a href="predio_list.php">Prédios</a></li>
-    <li><a href="sala_list.php">Salas</a></li>
-    <li><a href="periodo_list.php">Períodos</a></li>
-    <li><a href="professor_list.php">Profesores</a></li>
-    <li><a href="usuario_list.php">Usuários</a></li>
+    <a href="index.php"><li>Home</li></a>
+   <a href="sala_list.php"><li>Salas</li></a>
+    <a href="periodo_list.php"><li>Períodos</li></a>
+   <a href="relatorios.php"><li>Relatorios</li></a>
+   <a href="usuario_list.php"> <li>Usuários</li></a>
 
 </ul>
 

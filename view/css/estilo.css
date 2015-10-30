@@ -2,70 +2,62 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 
+/* tela de login */
+
+#topo { width:100%; text-align:center;}
+#content{ width:880px; margin:0 auto; height:490px; margin-top:80px; display:block;}
+#direito { width:320px; float:right; height:320px;}
+#esquerdo { width:478px; float:left; height:475px; } 
+#aviso { background-color:#2C73A8; width:458px; height:154px; color:#FFFFFF; font-size:16px; line-height:25px; padding-left:20px; }
+#aviso h3{ font-size:30px; margin:0px; padding-top:20px; padding-bottom:20px; }
+#rodape { border-top:1px solid #eee;  width:880px; margin:0 auto; text-align:center; padding:10px; color:#666666; font-size:12px; }
+
+
 
 /* escopo geral e estrutural */
 
 body{ padding:0px; margin:0px;font-family: 'Open Sans', sans-serif; color:#4E4E4E; overflow:hidden;background-color:#FFFFFF; }
 h3{ font-weight:300; }
-
 .menu  {  background-color:#464646; font-size:14px; width:130px;  height:1000px; float:left; padding-top:100px;  }
 .menu ul{ padding:0px; margin:0px; }
-
 .menu li {  padding:15px; margin:0px; color:#FFFFFF;  list-style:none;  transition: background-color 0.5s ease, color 0.5s ease;  background-color:#575757; cursor:pointer; }
-
 .menu li:hover { background-color:#D4D4D4; }
-
 .menu a{ color:#FFFFFF; text-decoration:none; }
 .menu li:hover a{  color:#3B3B3B; }
-
-
 .corpo{ width:100%; max-width:calc(100% - 180px); float:left; height:100%;   padding:15px;  } 
-
 .form{ width:400px; position:fixed; left:calc(100% - 350px);   padding:15px; height:1000px;  box-shadow: 0 0 9px rgba(191, 191, 191, 0.36); border-left:1px solid rgba(222, 227, 231, 0.56); background-color:#F7F7F7; display:none;    }
-
-input[type="text"]{  padding:10px; margin:0px; height:35px; width:calc(100% - 105px); border:none; border-bottom:1px solid #E1E1E1;  }
-
-input[type="button"]{ width:100px; height:40px; padding:10px; margin-top:10px; border:1px solid #969696; cursor:pointer;}
-
-select{ width:calc(100% - 85px); height:35px; }
-
-
-
-
-
-
-
+input[type="text"], input[type="password"]{  padding:10px; margin:0px; height:35px; width:calc(100% - 105px); border:none; border-bottom:1px solid #E1E1E1;  }
+input[type="button"],input[type="submit"]{ width:100px; height:40px; padding:10px; margin-top:10px; border:1px solid #969696; cursor:pointer;}
+select{ width:calc(100% - 85px); height:55px; border:none; }
 .btn1{ background-color:#ECECEC;  }
 .btn2{ background-color:#D4F7C4;  }
 
 /* estrutura das tabelas */
 
 .tabelarow { overflow:auto; overflow-x:hidden; height:100%;   }
-
 table{ table-layout:fixed; padding:0px; margin:0px; width:100%; border:0px; font-size:12px; line-height:40px; border-collapse:collapse;  }
-
 table th{ border-bottom:1px solid #E6E6E6; max-width:200px; }
-
-table th:nth-child(1){
-     width:80px; font-size:14px; 
-}
-
+table th:nth-child(1){  width:80px; font-size:14px; }
 table td{ border-bottom: solid 1px #E6E6E6; }
-
-table td:nth-child(1){
-     font-size:14px; font-weight:bold; width:80px;
-}
-
+table td:nth-child(1){  font-size:14px; font-weight:bold; width:80px; }
 hr { border:none; border-bottom:dashed 1px #E6E6E6; }
 
+.lista_comum , .tabela_comum { width:70%; }
+.lista_comum th, .lista_comum td{ text-align:left;  }
 
+.tabela_comum td{ border:0px; }
+.tabela_comum input[type="text"], .tabela_comum input[type="password"] { border:1px solid #E1E1E1 }
 
 /* agenda */
+.titulo_inicial { height: 40px; line-height:40px; text-align:center; width:100%; vertical-align:top; }
+.titulo_inicial div { height: 38px;  width:100px; display:inline-block; vertical-align:top; line-height:38px; }
+.titulo_inicial img{ display: inline-block; cursor:pointer; }
+.titulo_inicial input[type="text"] { height:38px; width:100%; border:none; padding:0px; margin-left:18px;  cursor:pointer;   }
 
-.ocupado{ background-color:#FEF8E7; cursor:pointer; }
+.reservado{ background-color:#FBFABB ; cursor:pointer; }
+.confirmado { background-color:#BFF9B9; cursor:pointer; }
+.cancelado{ background-color:#FCC5C5; cursor:pointer; }
 
-.ocupado hr{ border:none; }
+.reservado hr, .cancelado hr, .confirmado hr{ border:none; }
+.disponivel:hover { background-color:#DFDFDF; cursor:pointer; }
 
-.disponivel:hover { border: 1px solid #ccc; background-color:#DFDFDF; cursor:pointer; }
-
-.titulo_inicial { height: 40px; line-height:40px; text-align:center; width:100%; }

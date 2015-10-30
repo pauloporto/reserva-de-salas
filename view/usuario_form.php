@@ -1,12 +1,24 @@
 ﻿<?
-
 require("seguranca.php");
 
 require "../controller/usuarioController.php";
 
 $usuarioController = new UsuarioController();
-$lista = $usuarioController->listarcontroller();
 
+$usuario = $usuarioController->excluir();
+$usuario = $usuarioController->salvar();
+$usuario = $usuarioController->abrir();
+if(isset($usuario[0]))
+extract($usuario[0]);
+
+if(!isset($id))
+{
+	$nome = '';
+	$email = '';
+	$senha = '';
+	$id = 0;
+	
+}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -33,12 +45,6 @@ $lista = $usuarioController->listarcontroller();
 
 
 
-<!-- form -->
-<div class="form">
-
-</div>
-
-
 <!-- menu esquerdo -->
 <? include "menu_esquerdo.php"; ?>
 
@@ -48,30 +54,38 @@ $lista = $usuarioController->listarcontroller();
 
 <h3> Cadastro de Usuários </h3>
 
-<input type="button" name="novo" value="novo" class="btn1" onclick="abre('usuario_form.php')" />
 
-<table class="lista_comum" cellpadding="4" cellspacing="4">
+<form name="form1" method="post" target="_self">
 
-<thead>
+<input type="hidden" name="id" value="<?= $id ?>" />
+
+<table class="tabela_comum" cellpadding="4" cellspacing="4">
 
 <tr>
-<th> id </th>
-<th> Nome </th>
-<th> E-mail </th>
-
+<td width="100"> Nome </td>
+<td><input type="text" name="nome" value="<?= $nome ?>" /> </td>
+<td width="30"></td>
+<td width="100"> E-mail</td>
+<td > <input type="text" name="email" value="<?= $email?>" /></td>
 </tr>
 
-</thead>
+<tr>
+<td width="100"> Senha </td>
+<td><input type="password" name="senha" value="<?= $senha ?>" /> </td>
+<td width="30"></td>
+<td width="100"> </td>
+<td ></td>
+</tr>
 
-<tbody>
-
-<?= $lista ?>
-
-</tbody>
 
 </table>
 
 
+<input type="submit" name="salvar" value="Salvar" class="btn1" />
+
+<input type="submit" name="excluir" value="Excluir" class="btn1" />
+
+</form>
 
 </div>
 

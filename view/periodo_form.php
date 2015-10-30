@@ -1,12 +1,22 @@
 ﻿<?
-
 require("seguranca.php");
 
 require "../controller/periodoController.php";
 
 $periodoController = new periodoController();
-$lista = $periodoController->listarcontroller();
 
+$periodo = $periodoController->excluir();
+$periodo = $periodoController->salvar();
+$periodo = $periodoController->abrir();
+if(isset($periodo[0]))
+extract($periodo[0]);
+
+if(!isset($id))
+{
+	$nome = '';
+	$id = 0;
+	
+}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -27,16 +37,10 @@ $lista = $periodoController->listarcontroller();
   	 <script src="js/lib.js"></script>
      
      </head>
-     <title>Cadastro de Períodos</title>
+     <title>Cadastro de periodos</title>
      <body>
      
 
-
-
-<!-- form -->
-<div class="form">
-
-</div>
 
 
 <!-- menu esquerdo -->
@@ -48,30 +52,31 @@ $lista = $periodoController->listarcontroller();
 
 <h3> Cadastro de Períodos </h3>
 
-<input type="button" name="novo" value="novo" class="btn1" onclick="abre('periodo_form.php')" />
 
-<table class="lista_comum" cellpadding="4" cellspacing="4">
+<form name="form1" method="post" target="_self">
 
-<thead>
+<input type="hidden" name="id" value="<?= $id ?>" />
+
+<table class="tabela_comum" cellpadding="4" cellspacing="4">
 
 <tr>
-<th> id </th>
-<th> Nome </th>
-
-
+<td width="100"> Nome </td>
+<td><input type="text" name="nome" value="<?= $nome ?>" /> </td>
+<td width="30"></td>
+<td width="100"> </td>
+<td > </td>
 </tr>
 
-</thead>
 
-<tbody>
-
-<?= $lista ?>
-
-</tbody>
 
 </table>
 
 
+<input type="submit" name="salvar" value="Salvar" class="btn1" />
+
+<input type="submit" name="excluir" value="Excluir" class="btn1" />
+
+</form>
 
 </div>
 
