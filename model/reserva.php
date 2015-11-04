@@ -1,5 +1,5 @@
 ﻿<?
-include ("db_mysqli.php");
+include_once ("db_mysqli.php");
 
 class Reserva
 {
@@ -57,6 +57,15 @@ function abrir($id){
 	 
 	 	
 		
+	}
+	
+	
+	function verificarCompleto($data, $sala,$periodo)
+	{
+		$db = new Database();
+		
+		$sql = 'select * from reserva where sala_id =  ' .$sala .' and periodo_id = '.$periodo.' and dia = "'.$data->format("Y-m-d").'" ;';
+		return $db->query($sql);
 	}
 	
 	function excluir($id)
@@ -125,6 +134,44 @@ function abrir($id){
 
 	}
 	
+	
+	function disciplinaMaisReservas()
+	{
+	
+	$db = new Database();
+	
+	$sql = '
+
+	select
+	
+	 disciplina_desc
+	,count(id) as total
+	
+	from reserva
+	
+	group by disciplina_desc
+	order by total desc
+';
+	
+	
+	return $db->query($sql);
+	
+	}
+	
+	
+	function totalReservasMes($hoje)
+	{
+		$db = new Database();
+		
+		$sql = '  
+		
+		select count(id) as total from reserva where month(dia) = '.$hoje->format("m").';';
+		return $db->query($sql);
+	
+	}
+
+
+
 }
 
 ?>

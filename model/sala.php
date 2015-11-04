@@ -1,5 +1,5 @@
 ﻿<?
-include ("db_mysqli.php");
+include_once ("db_mysqli.php");
 
 class sala
 {
@@ -55,6 +55,14 @@ class sala
 		$db = new Database();
 		$sql = 'delete from sala where id = '.$id; 
 		return $db->query_update($sql);
+	}
+	
+	function total()
+	{
+		$db = new Database();
+		$sql = 'select count(id) as total from sala  ';
+		return $db->query($sql);
+		
 	}
 	
 }

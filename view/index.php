@@ -1,10 +1,9 @@
 <?php
 
 require("seguranca.php");
-include ("../model/db_mysqli.php");
+include ("../controller/dashboardController.php");
 
-$db = new Database();
-
+$dsc = new dashboardController();
 
 if(isset($_GET['data']))
 { $hoje =  date_create_from_format('d/m/Y',$_GET['data']); }
@@ -12,86 +11,11 @@ else
 { $hoje = new DateTime(); }
 
 
-// montar o topo
-$tabela_topo = '<tr> <th></th> ';
+// gera o topo da index
+$tabela_topo = $dsc->gerarTopoController();
 
-$sql = 'select * from periodo order by nome ';
-$periodos = $db->query($sql);
-
-foreach($periodos as $periodo)
-{	
-	$tabela_topo .= ' <th>' . $periodo['nome'] . '</th>';
-}
-$tabela_topo .= '</tr>';
-
-
-
-
-
-// trazer todas as salas
-$tabela_corpo = '';
-
-$sql = 'select * from sala order by nome ';
-
-$salas = $db->query($sql);
-
-foreach($salas as $sala)
-{
-	$tabela_corpo .=' <tr><td> '. $sala['nome'] . '</td> ';
-	
-	
-	// trazer todos os periodos
-	$sql = 'select * from periodo order by nome ';
-
-	$periodos = $db->query($sql);
-	
-	foreach($periodos as $periodo)
-	{	
-	
-		$disciplina_reserva = '';
-		$professores_reserva = '';
-
-		// checar se esse periodo, nessa sala, está ocupada.
-		$sql = 'select * from reserva where sala_id =  ' .$sala['id'] .' and periodo_id = '.$periodo['id'].' and dia = "'.$hoje->format("Y-m-d").'" ;';
-		
-		$status = $db->query($sql);
-	
-		
-		if(isset($status[0]['id'] ))
-		{ 
-			if( $status[0]['status'] == 1)
-			$css_ocupado = 'reservado' ;
-
-			else if ( $status[0]['status'] == 2)
-			$css_ocupado = 'confirmado' ;
-
-			else if ( $status[0]['status'] == 3)
-			$css_ocupado = 'cancelado' ;
-	
-			$disciplina_reserva =  $status[0]['disciplina_desc']  ;
-			$professores_reserva = $status[0]['professor_desc']  ; 
-			$id_reserva = $status[0]['id']  ;
-			// procurar por disciplinas e professores dessa resrva
-
-		}		
-		else
-		{ 
-			$id_reserva = 0;
-			$css_ocupado = 'disponivel' ;
-		}		
-		
-		// if($disciplina_reserva =! '') $disciplina_reserva = '<p>' . $disciplina_reserva . '</p>';
-		
-		$tabela_corpo .='<td onClick="abreReserva(this)" class="'.$css_ocupado.'" id="'.$id_reserva.'" sala="'.$sala['id'].'" periodo="'.$periodo['id'].'" > '.$disciplina_reserva. '&nbsp;<hr>&nbsp;'. $professores_reserva.' </td>';
-	
-	}
-	
-	
-	$tabela_corpo .=' </tr>';
-	
-}
-
-
+// gerar o corpo do relatorio
+$tabela_corpo = $dsc->gerarCorpoController($hoje);
 
 // configurar dias
 $dia_anterior = date_create_from_format('d/m/Y',$hoje->format("d/m/Y"));
@@ -114,12 +38,10 @@ $dia_posterior->modify('+1 day');
    		<script src="js/jquery.datetimepicker.full.js"></script>
         <script src="js/dateformat.js"></script>
         
-        <!-- <link href="css/select2.min.css" rel="stylesheet" /> -->
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
         <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
         
-		<!-- <script src="js/select2.min.js"></script> -->
-  	 <script src="js/lib.js"></script>
+  	 	<script src="js/lib.js"></script>
         <script>
 		
 		// variavel com a data
@@ -223,9 +145,6 @@ $dia_posterior->modify('+1 day');
 </table>
 
 </div>
-
-
-
 
 
 </div>

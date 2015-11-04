@@ -1,5 +1,5 @@
 <?
-include ("db_mysqli.php");
+include_once ("db_mysqli.php");
 
 class Usuario
 {

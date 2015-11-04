@@ -1,5 +1,5 @@
 ﻿<?
-include ("db_mysqli.php");
+include_once ("db_mysqli.php");
 
 class Periodo
 {
@@ -55,6 +55,15 @@ class Periodo
 		$db = new Database();
 		$sql = 'delete from periodo where id = '.$id; 
 		return $db->query_update($sql);
+	}
+	
+	
+	function total()
+	{
+		$db = new Database();
+		$sql = 'select count(id) as total from periodo  ';
+		return $db->query($sql);
+		
 	}
 	
 }

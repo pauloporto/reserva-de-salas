@@ -1,4 +1,4 @@
-<?
+﻿<?
 
 require "util.php";
 require "../model/usuario.php";

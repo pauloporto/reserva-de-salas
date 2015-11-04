@@ -1,57 +1,21 @@
 ﻿<?
 
 require("seguranca.php");
-include ("../model/db_mysqli.php");
 
-$db = new Database();
+include "../controller/dashboardController.php";
+$dsc = new dashboardController();
+
 
 // Disciplina que mais reserva
-$sql = '
-
-select
-
- disciplina_desc
-,count(id) as total
-
-from reserva
-
-group by disciplina_desc
-order by total desc
-';
-
-$row1 = $db->query($sql);
-
-$tabela = '';
-foreach($row1 as $row)
-{
-	$tabela .= '<tr>
-	<td></td>
-	<td width="300">'.$row['disciplina_desc'].' </td>
-	<td>'.$row['total'].' </td>
-	
-		</tr>';
-	
-}
+$tabela = $dsc->disciplinaMaisReservasController();
 
 
 // calculo da taxa de ocupação
 
-// Total de salas * total de horarios * 30 dias
-$sql = 'select count(id) as total from sala  ';
-$salas = $db->query($sql);
+$total_horarios =   $dsc->totalHorariosController();
 
-$sql = 'select count(id) as total from periodo  ';
-$periodos = $db->query($sql);
 
-$total_horarios = $salas[0]['total']  *  $periodos[0]['total'] * 30  ;
-
-$hoje = new DateTime();
-$sql = '  
-
-select count(id) as total from reserva where month(dia) = '.$hoje->format("m").';';
-$reservas = $db->query($sql);
-
-$total_reservas = $reservas[0]['total'];
+$total_reservas =  $dsc->totalReservasController();
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
