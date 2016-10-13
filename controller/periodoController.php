@@ -13,7 +13,6 @@ class periodoController
 			$nome = Util::clearparam($_POST['nome']);
 			$id = Util::clearparam($_POST['id']);
 
-			
 			$periodo = new Periodo();
 			$periodo->salvar($id,$nome);
 			header("Location: periodo_list.php");
@@ -35,7 +34,7 @@ class periodoController
 			exit();
 				
 		}
-		
+
 	}
 	
 	function abrir()
@@ -48,12 +47,8 @@ class periodoController
 		}	
 		
 	}
-	
-	
-	
-	
+
 	// listagem
-	
 	function listarcontroller()
 	{
 		
@@ -69,12 +64,11 @@ class periodoController
 							<td><a href="periodo_form.php?id='.$linha['id'].'">'.$linha['nome'].'</a></td>
 						</tr>		
 							';
-
-			
 		}
 		
 		return $tabela;
-		
 	}
 	
 }
+
+?>

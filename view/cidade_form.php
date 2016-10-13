@@ -6,7 +6,6 @@ require("seguranca.php");
 $msg = "";
 if(isset($_POST['cadastrar'])){
 
-		
 	require($cfg->fileroot."controller/cidade_controller.php");
 	
 	$controller = new Cidade_controller();

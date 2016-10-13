@@ -4,7 +4,6 @@ include_once ("db_mysqli.php");
 class sala
 {
  
-
 	function listar()
 	{
 		
@@ -13,7 +12,6 @@ class sala
 		$sql = ' select * from sala order by nome;' ;
 		return $db->query($sql);
 	}
-	
 	
 	function abrir($id)
 	{
@@ -32,22 +30,17 @@ class sala
 		// inserir
 		if($id == 0)
 		{
-		$senha = md5($senha);
-		
-		$sql = 'insert into sala ( nome ) values ("'.$nome.'")';
-		return $db->query_insert($sql);
+			$sql = 'insert into sala ( nome ) values ("'.$nome.'")';
+			return $db->query_insert($sql);
 		}
 		else
-		{ // atualizar
-			
-		
-			
+		{ 
+			// atualizar
 			$sql = ' update sala set nome = "'.$nome.'" where id = ' .$id;
 			return $db->query_update($sql);
 
 		}
 
-		
 	}
 	
 	function excluir($id)

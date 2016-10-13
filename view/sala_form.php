@@ -23,8 +23,7 @@ if(!isset($id))
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-        
+
 		<script src="js/jquery.js"></script>
    		<script src="js/jquery.datetimepicker.full.js"></script>
         <script src="js/dateformat.js"></script>
@@ -39,9 +38,6 @@ if(!isset($id))
      </head>
      <title>Cadastro de salas</title>
      <body>
-     
-
-
 
 <!-- menu esquerdo -->
 <? include "menu_esquerdo.php"; ?>
@@ -58,19 +54,14 @@ if(!isset($id))
 <input type="hidden" name="id" value="<?= $id ?>" />
 
 <table class="tabela_comum" cellpadding="4" cellspacing="4">
-
-<tr>
-<td width="100"> Nome </td>
-<td><input type="text" name="nome" value="<?= $nome ?>" /> </td>
-<td width="30"></td>
-<td width="100"> </td>
-<td > </td>
-</tr>
-
-
-
+    <tr>
+        <td width="100"> Nome </td>
+        <td><input type="text" name="nome" value="<?= $nome ?>" /> </td>
+        <td width="30"></td>
+        <td width="100"> </td>
+        <td > </td>
+    </tr>
 </table>
-
 
 <input type="submit" name="salvar" value="Salvar" class="btn1" />
 
@@ -79,8 +70,6 @@ if(!isset($id))
 </form>
 
 </div>
-
-
 
 </body>
 </html>

@@ -13,7 +13,6 @@ class salaController
 			$nome = Util::clearparam($_POST['nome']);
 			$id = Util::clearparam($_POST['id']);
 
-			
 			$sala = new sala();
 			$sala->salvar($id,$nome);
 			header("Location: sala_list.php");
@@ -46,14 +45,9 @@ class salaController
 			$sala = new sala();
 			return $sala->abrir( $_GET['id']);
 		}	
-		
 	}
 	
-	
-	
-	
 	// listagem
-	
 	function listarcontroller()
 	{
 		
@@ -69,12 +63,11 @@ class salaController
 							<td><a href="sala_form.php?id='.$linha['id'].'">'.$linha['nome'].'</a></td>
 						</tr>		
 							';
-
-			
 		}
 		
 		return $tabela;
 		
 	}
-	
 }
+
+?>

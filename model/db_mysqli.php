@@ -5,7 +5,7 @@ class Database {
 	private $link;
 
 	function __construct(){
-		$this->link = mysqli_connect("127.0.0.1", "root", "1234", "sgreserva") or die("erro: ". mysqli_connect_error());
+		$this->link = mysqli_connect("127.0.0.1", "root", "", "reserva_sala") or die("erro: ". mysqli_connect_error());
 	}
 
 	function query($sql){
@@ -23,12 +23,6 @@ class Database {
 				$array_result[] = $row;
 			}
 	
-			// se retorna apenas uma linha, 
-			
-			/*if(sizeof($array_result) == 1)
-			$array_result = $array_result[0];
-	*/
-		
 		return $array_result;
 	}
 

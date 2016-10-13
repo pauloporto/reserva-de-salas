@@ -15,7 +15,6 @@ if(!isset($id))
 {
 	$nome = '';
 	$id = 0;
-	
 }
 
 ?>
@@ -39,36 +38,27 @@ if(!isset($id))
      </head>
      <title>Cadastro de periodos</title>
      <body>
-     
-
-
 
 <!-- menu esquerdo -->
 <? include "menu_esquerdo.php"; ?>
 
 <!-- conteudo -->
-
 <div class="corpo">
 
 <h3> Cadastro de Períodos </h3>
-
 
 <form name="form1" method="post" target="_self">
 
 <input type="hidden" name="id" value="<?= $id ?>" />
 
 <table class="tabela_comum" cellpadding="4" cellspacing="4">
-
-<tr>
-<td width="100"> Nome </td>
-<td><input type="text" name="nome" value="<?= $nome ?>" /> </td>
-<td width="30"></td>
-<td width="100"> </td>
-<td > </td>
-</tr>
-
-
-
+    <tr>
+        <td width="100"> Nome </td>
+        <td><input type="text" name="nome" value="<?= $nome ?>" /> </td>
+        <td width="30"></td>
+        <td width="100"> </td>
+        <td > </td>
+    </tr>
 </table>
 
 
@@ -79,8 +69,6 @@ if(!isset($id))
 </form>
 
 </div>
-
-
 
 </body>
 </html>

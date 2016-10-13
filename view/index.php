@@ -21,19 +21,15 @@ $tabela_corpo = $dsc->gerarCorpoController($hoje);
 $dia_anterior = date_create_from_format('d/m/Y',$hoje->format("d/m/Y"));
 $dia_anterior->modify('-1 day');
 
-
 $dia_posterior  = date_create_from_format('d/m/Y',$hoje->format("d/m/Y"));
 $dia_posterior->modify('+1 day');
-
-
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-        
+	        
 		<script src="js/jquery.js"></script>
    		<script src="js/jquery.datetimepicker.full.js"></script>
         <script src="js/dateformat.js"></script>
@@ -63,8 +59,7 @@ $dia_posterior->modify('+1 day');
 								  timepicker:false,
 								  format:'d/m/Y'
 								});
-
-							
+	
 		});
 		
 		
@@ -76,21 +71,15 @@ $dia_posterior->modify('+1 day');
 		
 		function voltaTela()
 		{
-
 			 window.location.href = "index.php?data="+  dia_anterior;
-			
 		}
 		function avancaTela()
 		{
 			 window.location.href = "index.php?data="+  dia_posterior;
-			
 		}
 	
 		</script>
-        
-      
-         
-         
+  
 		<title>Home</title>
 	</head>
 	<body>
@@ -105,7 +94,6 @@ $dia_posterior->modify('+1 day');
 <? include "menu_esquerdo.php"; ?>
 
 <!-- conteudo -->
-
 <div class="corpo">
 
 <div class="titulo_inicial" > 
@@ -118,17 +106,16 @@ $dia_posterior->modify('+1 day');
 </form>
 </div>
 
-
 <img src="img/avancar.png" width="40" height="40" alt="" onclick="avancaTela()"/>
 </div>
 
 <table border="0" cellpadding="4" cellspacing="0">
 
-<thead>
-	
-	<?= $tabela_topo ?>
-    
-</thead>
+    <thead>
+        
+        <?= $tabela_topo ?>
+        
+    </thead>
 
 </table>
 
@@ -136,11 +123,11 @@ $dia_posterior->modify('+1 day');
 
 <table border="0" cellpadding="4" cellspacing="0">
 
-<tbody>
-
-<?= $tabela_corpo ?>
-
-</tbody>
+    <tbody>
+    
+        <?= $tabela_corpo ?>
+    
+    </tbody>
 
 </table>
 

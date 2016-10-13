@@ -32,9 +32,7 @@ function abrir($id){
 	 where a.id = '.$id;
 	 
 	 return $db->query($sql);
-	
-	
-	
+
 	}	
 	
 	
@@ -54,9 +52,7 @@ function abrir($id){
 	 and dia = "'.$data->format("Y-m-d").'"; '; 
 	
 	 return $db->query($sql);
-	 
-	 	
-		
+
 	}
 	
 	
@@ -83,7 +79,6 @@ function abrir($id){
 	{
 	
 		$db = new Database();
-			
 			
 		// atualizar
 		if($id >0)
@@ -169,9 +164,6 @@ function abrir($id){
 		return $db->query($sql);
 	
 	}
-
-
-
 }
 
 ?>

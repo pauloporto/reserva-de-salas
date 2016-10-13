@@ -25,10 +25,7 @@ body,td,th {
 <body>
 <form action="login.php" method="post"  name="Formulario">
 
-
-
 <div id="content">
-
 
 <div id="esquerdo">
 <img src="img/login.jpg" width="478" height="320" />
@@ -38,7 +35,6 @@ body,td,th {
     A forma mais pr&aacute;tica e simples de reservar salas de aula, laborat&oacute;rios e outros espa&ccedil;os.</div>
 
 </div>
-
 
 <div id="direito">
 
@@ -61,10 +57,6 @@ versão <strong>1.0</strong>&nbsp;<br />
 
 <input type="submit" name="entrar" value="Entrar" class="btn1" />
 
-
-
-
-
 </div>
 </div>
 
@@ -73,9 +65,6 @@ versão <strong>1.0</strong>&nbsp;<br />
 Sistema de Reserva de salas é <a href="https://pt.wikipedia.org/wiki/GNU_General_Public_License">GNU General Public License</a>
 
 </div>
-
-
-
 
 </form>
 </body>

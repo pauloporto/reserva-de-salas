@@ -3,17 +3,14 @@ include_once ("db_mysqli.php");
 
 class Periodo
 {
- 
 
 	function listar()
 	{
-		
 		$db = new Database();
 		
 		$sql = ' select * from periodo order by nome;' ;
 		return $db->query($sql);
 	}
-	
 	
 	function abrir($id)
 	{
@@ -32,22 +29,16 @@ class Periodo
 		// inserir
 		if($id == 0)
 		{
-		$senha = md5($senha);
-		
-		$sql = 'insert into periodo ( nome ) values ("'.$nome.'")';
-		return $db->query_insert($sql);
+			$sql = 'insert into periodo ( nome ) values ("'.$nome.'")';
+			return $db->query_insert($sql);
 		}
 		else
-		{ // atualizar
-			
-		
-			
+		{ 
+			// atualizar
 			$sql = ' update periodo set nome = "'.$nome.'" where id = ' .$id;
 			return $db->query_update($sql);
 
 		}
-
-		
 	}
 	
 	function excluir($id)
@@ -65,7 +56,6 @@ class Periodo
 		return $db->query($sql);
 		
 	}
-	
 }
 
 ?>

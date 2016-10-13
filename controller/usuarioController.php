@@ -42,7 +42,6 @@ class UsuarioController
 			exit();
 				
 		}
-		
 	}
 	
 	function abrir()
@@ -55,12 +54,8 @@ class UsuarioController
 		}	
 		
 	}
-	
-	
-	
-	
+
 	// listagem
-	
 	function listarcontroller()
 	{
 		
@@ -77,7 +72,6 @@ class UsuarioController
 							<td>'.$linha['email'].'</td>
 						</tr>		
 							';
-
 			
 		}
 		
@@ -108,20 +102,15 @@ class UsuarioController
 			}
 			else
 			{
-			
 				return "E-mail ou senha inválidos";
-				
 			}
 			
-		}else
+		}
+		else
 		{
-			
 			return ''; // nada a fazer
 		}
-		
-		
 	}	
-	
 }
 
 ?>

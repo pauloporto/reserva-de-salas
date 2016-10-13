@@ -16,7 +16,6 @@ class dashboardController{
 		// montar o topo
 		$tabela_topo = '<tr> <th></th> ';
 		
-		
 		$periodos = $periodo->listar();
 		
 		foreach($periodos as $periodo)
@@ -26,7 +25,6 @@ class dashboardController{
 		$tabela_topo .= '</tr>';
 
 	return $tabela_topo;
-	
 	
 	}
 	
@@ -38,7 +36,6 @@ class dashboardController{
 	$sl = new sala();
 	$per = new Periodo();
 	$res = new Reserva();
-	
 
 	$tabela_corpo = '';
 
@@ -49,7 +46,6 @@ class dashboardController{
 	{
 		$tabela_corpo .=' <tr><td> '. $sala['nome'] . '</td> ';
 
-		
 		// para cada periodo
 		$periodos = $per->listar();
 		
@@ -63,7 +59,6 @@ class dashboardController{
 			
 			$status = $res->verificarCompleto($hoje,$sala['id'],$periodo['id']);
 			
-	
 			if(isset($status[0]['id'] ))
 			{ 
 				if( $status[0]['status'] == 1)
@@ -92,18 +87,14 @@ class dashboardController{
 			$tabela_corpo .='<td onClick="abreReserva(this)" class="'.$css_ocupado.'" id="'.$id_reserva.'" sala="'.$sala['id'].'" periodo="'.$periodo['id'].'" > '.$disciplina_reserva. '&nbsp;<hr>&nbsp;'. $professores_reserva.' </td>';
 		
 		}
-		
-		
-		$tabela_corpo .=' </tr>';
-		
-		
+
+		$tabela_corpo .=' </tr>';		
 	}
 
 return $tabela_corpo;
 }
 
-	
-	
+
 	// relatorio de disciplina com mais reservas
 
 	function disciplinaMaisReservasController()
@@ -121,11 +112,9 @@ return $tabela_corpo;
 			<td>'.$row['total'].' </td>
 			
 				</tr>';
-			
 		}
 	
 	return $tabela ;	
-		
 	}
 	
 	
@@ -144,8 +133,7 @@ return $tabela_corpo;
 		
 		$total_horarios = $salas[0]['total']  *  $periodos[0]['total'] * 30  ;
 		return $total_horarios;
-	
-		
+
 	}
 	
 	

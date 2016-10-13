@@ -40,10 +40,10 @@ class Usuario
 		// inserir
 		if($id == 0)
 		{
-		$senha = md5($senha);
-		
-		$sql = 'insert into usuario ( nome, email, senha) values ("'.$nome.'","'.$email.'","'.$senha .'")';
-		return $db->query_insert($sql);
+			$senha = md5($senha);
+			
+			$sql = 'insert into usuario ( nome, email, senha) values ("'.$nome.'","'.$email.'","'.$senha .'")';
+			return $db->query_insert($sql);
 		}
 		else
 		{ // atualizar

@@ -11,9 +11,7 @@ $tabela = $dsc->disciplinaMaisReservasController();
 
 
 // calculo da taxa de ocupação
-
 $total_horarios =   $dsc->totalHorariosController();
-
 
 $total_reservas =  $dsc->totalReservasController();
 
@@ -22,7 +20,6 @@ $total_reservas =  $dsc->totalReservasController();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
         
 		<script src="js/jquery.js"></script>
    		<script src="js/jquery.datetimepicker.full.js"></script>
@@ -38,34 +35,26 @@ $total_reservas =  $dsc->totalReservasController();
      </head>
      <title>Relatorios</title>
      <body>
-     
-
-
 
 <!-- menu esquerdo -->
 <? include "menu_esquerdo.php"; ?>
 
 <!-- conteudo -->
-
 <div class="corpo">
 
 <h3> Total de reservas por disciplina </h3>
 
-
 <table class="lista_comum" cellpadding="4" cellspacing="4">
 
-<tr>
-<th></th>
-<th width="300"> Nome </th>
-<th > Total</th>
+	<tr>
+    	<th></th>
+    	<th width="300"> Nome </th>
+    	<th > Total</th>
+	</tr>
 
-</tr>
-
-<?= $tabela?>
-
+	<?= $tabela	?>
 
 </table>
-
 
 <h3> Taxa de ocupação das salas </h3>
 <div id="chart_div"></div>
@@ -104,13 +93,7 @@ $total_reservas =  $dsc->totalReservasController();
       }
     </script>
 
-
-
-
-
 </div>
-
-
 
 </body>
 </html>
