@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 
 require("seguranca.php");
 
@@ -34,7 +34,7 @@ $lista = $salaController->listarcontroller();
 
 
 <!-- menu esquerdo -->
-<? include "menu_esquerdo.php"; ?>
+<?php include "menu_esquerdo.php"; ?>
 
 <!-- conteudo -->
 

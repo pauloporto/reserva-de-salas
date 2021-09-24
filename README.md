@@ -1,11 +1,14 @@
-#Sistema gratuito de reservas de salas e laboratórios
+#Sistema gratuito feito em PHP/MySQL para reservas para de salas e laboratórios:
 Uma reserva é composta por uma data + sala (espaço)  + período (horário) , para um professor ou cliente, com possibilidade de repetições semanais.
 
 #Requisitos do sistema:
-PHP 5 ou superior
-MySQL 5.1 ou superior
-Apache compatível
+- PHP 7.4
+- MySQL 5.7
+- Apache
 
 #Instalação 
-Rodar o arquivo sgreserva.sql para instalação do banco de dados.
-O usuário padrão do sistema é "teste" com a senha "teste".
+- instalar o servidor web com requisitos solicitados (apache+php+mysql).
+- Rodar o arquivo sgreserva.sql para instalação do banco de dados.
+- configurar sua conexãono arquivo config.php
+- o primeiro usuário padrão para acesso ao sistema sistema é "teste" com a senha "teste"
+

@@ -91,7 +91,7 @@ $dia_posterior->modify('+1 day');
 
 
 <!-- menu esquerdo -->
-<? include "menu_esquerdo.php"; ?>
+<?php include "menu_esquerdo.php"; ?>
 
 <!-- conteudo -->
 <div class="corpo">

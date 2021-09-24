@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 
 require("seguranca.php");
 
@@ -35,7 +35,7 @@ $lista = $periodoController->listarcontroller();
 
 
 <!-- menu esquerdo -->
-<? include "menu_esquerdo.php"; ?>
+<?php include "menu_esquerdo.php"; ?>
 
 <!-- conteudo -->
 <div class="corpo">

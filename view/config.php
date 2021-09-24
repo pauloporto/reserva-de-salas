@@ -1,14 +1,13 @@
 <?php
 
-
-//variáveis globais
 $cfg = new stdClass();
-$cfg->fileroot = "C:\wamp\www\projeto_teste\\";
-$cfg->wwwroot = "http://127.0.01/projeto_teste/";
 
-//funcoes globais
-
-//require($cfg->fileroot."view\util\geral.php");
+// configuração de banco de dados
+$cfg->db_host = '127.0.0.1';
+$cfg->db_user = 'root';
+$cfg->db_senha = '';
+$cfg->db_banco = 'sgreserva';
+$cfg->db_porta = 3306;
 
 date_default_timezone_set("Brazil/East");
 

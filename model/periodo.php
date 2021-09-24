@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 include_once ("db_mysqli.php");
 
 class Periodo
@@ -21,7 +21,7 @@ class Periodo
 		return $db->query($sql);
 	}
 	
-	function salvar($id,$nome, $email)
+	function salvar($id,$nome)
 	{
 	
 		$db = new Database();

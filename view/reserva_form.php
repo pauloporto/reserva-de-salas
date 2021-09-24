@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 
 require '../controller/reservaController.php';
 
@@ -80,7 +80,7 @@ foreach($a_options_status as $opt_stat)
 <input type="button" name="Excluir" value="Excluir" class="btn1" onclick="excluirFormularioReserva(<?= $reg_id ?>)">
 <input type="submit" name="salvar" value="Salvar" class="btn2">
 </form>
-<?
+<?php
 
 }
 

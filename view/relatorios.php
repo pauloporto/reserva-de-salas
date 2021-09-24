@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 
 require("seguranca.php");
 
@@ -37,7 +37,7 @@ $total_reservas =  $dsc->totalReservasController();
      <body>
 
 <!-- menu esquerdo -->
-<? include "menu_esquerdo.php"; ?>
+<?php include "menu_esquerdo.php"; ?>
 
 <!-- conteudo -->
 <div class="corpo">

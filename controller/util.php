@@ -1,4 +1,4 @@
-<?
+<?php
 
 /* classe de funcionalidades gerais e uteis */
 class Util

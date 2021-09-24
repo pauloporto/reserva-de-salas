@@ -43,8 +43,8 @@ body,td,th {
 <img src="img/logo.png" alt="Sistema de Reservas de Salas de Aula" title="Sistema de Reservas de Salas de Aula" width="220" height="72" />
 <br />
 <br />
-versão <strong>1.0</strong>&nbsp;<br />
-<span style="color:#900"><? echo $errormsg; ?></span><br />
+versão <strong>1.1</strong>&nbsp;<br />
+<span style="color:#900"><?php echo $errormsg; ?></span><br />
 
 <input type="text" name="email" id="email" placeholder="E-mail"  />
 <br />

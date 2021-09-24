@@ -1,4 +1,4 @@
-﻿<?
+﻿<?php
 require("seguranca.php");
 
 require "../controller/usuarioController.php";
@@ -40,7 +40,7 @@ if(!isset($id))
      <body>
 
 <!-- menu esquerdo -->
-<? include "menu_esquerdo.php"; ?>
+<?php include "menu_esquerdo.php"; ?>
 
 <!-- conteudo -->
 

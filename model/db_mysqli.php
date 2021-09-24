@@ -5,7 +5,9 @@ class Database {
 	private $link;
 
 	function __construct(){
-		$this->link = mysqli_connect("127.0.0.1", "root", "", "reserva_sala") or die("erro: ". mysqli_connect_error());
+		global $cfg;
+
+		$this->link = mysqli_connect($cfg->db_host,$cfg->db_user, $cfg->db_senha , $cfg->db_banco ,$cfg->db_porta ) or die("erro: ". mysqli_connect_error());
 	}
 
 	function query($sql){
