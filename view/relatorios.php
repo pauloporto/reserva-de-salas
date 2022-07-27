@@ -1,8 +1,7 @@
 ﻿<?php
 
-require("seguranca.php");
-
-include "../controller/dashboardController.php";
+require_once "seguranca.php";
+require_once "../controller/dashboardController.php";
 $dsc = new dashboardController();
 
 

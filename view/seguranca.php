@@ -7,7 +7,7 @@ if(!isset($_SESSION['user_id'])){
 	exit;
 }else{
 	//se estiver tudo certo com a sessão adiciona config.  
-	require("config.php");
+	require_once("config.php");
 }
 
 ?>

@@ -87,7 +87,7 @@ class ReservaController{
 					
 					$id_existente = $reserva->verificar($data, $sala_id,$periodo_id);
 	
-					if(!isset($id_existente['id'])){
+					if(!isset($id_existente[0]['id'])){
 						// duplicar reserva para a data selecionada.
 						$id = 0;
 						$reserva->salvar($id,$dia,$professor,$disciplina,$data,$observacao,$status,$sala_id,$periodo_id);	

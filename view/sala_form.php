@@ -1,7 +1,7 @@
 ﻿<?php
-require("seguranca.php");
 
-require "../controller/salaController.php";
+require_once "seguranca.php";
+require_once "../controller/salaController.php";
 
 $salaController = new salaController();
 

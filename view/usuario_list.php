@@ -1,7 +1,6 @@
 ﻿<?php
 
-require("seguranca.php");
-
+require_once "seguranca.php";
 require "../controller/usuarioController.php";
 
 $usuarioController = new UsuarioController();

@@ -1,5 +1,5 @@
 <?php
-include_once ("db_mysqli.php");
+require_once "db_mysqli.php";
 
 class Usuario
 {

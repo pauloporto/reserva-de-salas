@@ -1,7 +1,7 @@
 ﻿<?php
-require("seguranca.php");
 
-require "../controller/periodoController.php";
+require_once "seguranca.php";
+require_once "../controller/periodoController.php";
 
 $periodoController = new periodoController();
 
